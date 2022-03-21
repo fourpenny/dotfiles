@@ -1,0 +1,15 @@
+# important basic stuff
+git
+wget
+neovim
+
+# useful utilities
+ranger
+zathura
+
+# RICE
+neofetch
+
+# fun :)
+sl
+cowsay

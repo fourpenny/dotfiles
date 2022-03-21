@@ -33,7 +33,12 @@ let g:webdevicons_enable_nerdtree = 1
 
 "---- NERDTree ----
 " Start NERDTree and put the cursor back in the other window.
+
+" Automatically close NerdTree if it's the last window open
 autocmd VimEnter * NERDTree | wincmd p
 
 "---- Hexokinase ----
-let g:Hexokinase_highlighters = ['virtual']
+let g:Hexokinase_highlighters = ['foreground']
+
+"---- Airline----"
+let g:airline_theme='bubblegum'
