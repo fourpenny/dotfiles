@@ -1,6 +1,2 @@
 # dotfiles
-My dotfiles in .config. Includes the following:
-* Kitty
-* Neovim
-* i3
-* rofi
+My dotfiles in .config. Run the setup script (setup.bash) to get everything setup nicely.
