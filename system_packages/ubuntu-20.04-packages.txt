@@ -7,8 +7,12 @@ neovim
 ranger
 zathura
 
+# terminal
+kitty
+
 # RICE
 neofetch
+feh
 
 # fun :)
 sl

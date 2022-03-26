@@ -83,3 +83,9 @@ if echo "$operating_system" | grep -i "ubuntu"; then
 		snap install --classic $snp
 	done
 fi
+
+
+#####################
+#  Update Terminal  #
+#####################
+update-alternatives --config x-terminal-emulator
