@@ -42,6 +42,9 @@ echo "Detecting operating system."
 if grep -q "Ubuntu 20.04" /etc/lsb-release; then
 	echo "Ubuntu 20.04 LTS detected!"
 	operating_system='ubuntu-20.04'
+elif grep -q "Ubuntu 22.04" /etc/lsb-release; then
+	echo "Ubuntu 22.04 LTS detected!"
+	operating_system='ubuntu-22.04'
 else
 	echo "Unsupported operating system detected."
 	exit 1
@@ -55,7 +58,7 @@ mkdir -p build
 
 PKGS_FILE="system_packages/$operating_system-packages.txt"
 PACKAGES="$(sed 's/#.*//;/^$/d' ${PKGS_FILE})"
-if [ "$operating_system" = "ubuntu-20.04" ]; then
+if [ "$operating_system" = "ubuntu-20.04" ] | [ "$operating_system" = "ubuntu-22.04" ]  ; then
 	apt update
 	apt install -y $PACKAGES
 fi
@@ -88,4 +91,19 @@ fi
 #####################
 #  Update Terminal  #
 #####################
-update-alternatives --config x-terminal-emulator
+# Commented below for now so I can use ESP-32 toolchain with compatible
+# terminal
+# update-alternatives --config x-terminal-emulator
+
+
+#####################
+# Copy dotfiles     #
+#####################
+
+dotfiles=("i3" "nvim" "rofi" "kitty")
+
+for df in "${dotfiles[@]}"; do
+	#cp -r ../$df /home/$USER/.config
+	echo $df
+done
+

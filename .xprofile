@@ -1,0 +1,3 @@
+xrandr --newmode "1440x960_60.00" 113.75 1440 1528 1672 1904 960 963 973 996 -hsync +vsync
+xrandr --addmode eDP-1 1440x960_60.00
+xrandr --output eDP-1 --mode 1440x960_60.00
