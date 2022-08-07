@@ -103,7 +103,7 @@ fi
 dotfiles=("i3" "nvim" "rofi" "kitty")
 
 for df in "${dotfiles[@]}"; do
-	#cp -r ../$df /home/$USER/.config
+	cp -r ./$df /home/$SETUP_USER/.config
 	echo $df
 done
 
