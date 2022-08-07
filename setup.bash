@@ -58,6 +58,7 @@ mkdir -p build
 
 PKGS_FILE="system_packages/$operating_system-packages.txt"
 PACKAGES="$(sed 's/#.*//;/^$/d' ${PKGS_FILE})"
+echo $PACKAGES
 if [ "$operating_system" = "ubuntu-20.04" ] | [ "$operating_system" = "ubuntu-22.04" ]  ; then
 	apt update
 	apt install -y $PACKAGES
@@ -89,12 +90,12 @@ fi
 
 
 #####################
-#  Update Terminal  #
+#  Update Defaults  #
 #####################
 # Commented below for now so I can use ESP-32 toolchain with compatible
 # terminal
 # update-alternatives --config x-terminal-emulator
-
+update-alternatives --config editor 
 
 #####################
 # Copy dotfiles     #
@@ -107,3 +108,9 @@ for df in "${dotfiles[@]}"; do
 	echo $df
 done
 
+
+#####################
+# Install vim-plug  #
+#####################
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
