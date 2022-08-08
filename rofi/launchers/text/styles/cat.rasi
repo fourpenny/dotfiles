@@ -1,12 +1,12 @@
 /* colors */
 
 * {
-  al:      #00000000;
-  bg:      #1A1826ff;
-  se:      #2A3950ff;
+  al:      #302D41ff;
+  bg:      #302D41ff;
+  se:      #F2CDCDff;
   fg:      #FEFFF1ff;
   ac:      #B5E8E0ff;
-  red:     #F28FADff;
+  red:     #F2CDCDff;
   green:   #ABE9B3ff;
   yellow:  #FAE3B0ff;
   blue:    #96CDFBff;

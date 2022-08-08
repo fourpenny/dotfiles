@@ -13,13 +13,14 @@
 
 dir="$HOME/.config/rofi/launchers/text"
 styles=($(ls -p --hide="colors.rasi" $dir/styles))
+color="$styles/cat.rasi"
 
 # comment this line to disable random colors
 #sed -i -e "s/@import .*/@import \"$color\"/g" $dir/styles/colors.rasi
 
 # comment these lines to disable random style
 #themes=($(ls -p --hide="launcher.sh" --hide="styles" $dir))
-theme="style_2"
+theme="style_7"
 
 rofi -no-lazy-grab -show drun \
 -modi run,drun,window \
