@@ -2,6 +2,7 @@
 git
 wget
 neovim
+gcc
 
 # useful utilities
 ranger

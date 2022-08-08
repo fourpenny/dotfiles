@@ -92,14 +92,14 @@ fi
 #####################
 #  Update Defaults  #
 #####################
-# Commented below for now so I can use ESP-32 toolchain with compatible
+# Comment below if you want to use ESP-32 toolchain with compatible
 # terminal
-# update-alternatives --config x-terminal-emulator
+update-alternatives --config x-terminal-emulator
 update-alternatives --config editor 
 
-#####################
-# Copy dotfiles     #
-#####################
+########################
+# Copy dotfiles and bg #
+########################
 
 dotfiles=("i3" "nvim" "rofi" "kitty")
 
@@ -108,6 +108,7 @@ for df in "${dotfiles[@]}"; do
 	echo $df
 done
 
+cp ./comfy-home.png /home/$SETUP_USER/Pictures
 
 #####################
 # Install vim-plug  #
