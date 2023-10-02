@@ -101,7 +101,7 @@ update-alternatives --config editor
 # Copy dotfiles and bg #
 ########################
 
-dotfiles=("i3" "nvim" "rofi" "kitty")
+dotfiles=("i3" "nvim" "kitty")
 
 for df in "${dotfiles[@]}"; do
 	cp -r ./$df /home/$SETUP_USER/.config
@@ -110,8 +110,23 @@ done
 
 cp ./comfy-home.png /home/$SETUP_USER/Pictures
 
-#####################
-# Install vim-plug  #
-#####################
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+########################
+# Install misc apps    #
+########################
+wget "https://discord.com/api/download?platform=linux&format=deb" -O discord.deb
+dpkg -i discord.deb
+rm discord.deb
+
+########################
+# Install ROS Humble   #
+########################
+# Instructions from here as a script:
+# https://docs.ros.org/en/humble/Installation/Ubuntu-Install-Debians.html
+add-apt-repository universe
+curl -sSL https://raw.githubusercontent.com/ros/rosdistro/master/ros.key -o /usr/share/keyrings/ros-archive-keyring.gpg
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/ros-archive-keyring.gpg] http://packages.ros.org/ros2/ubuntu $(. /etc/os-release && echo $UBUNTU_CODENAME) main" | sudo tee /etc/apt/sources.list.d/ros2.list > /dev/null
+# YES, THIS IS REQUIRED!
+# Don't skip it or it could cause problems
+apt update
+apt upgrade
+apt install ros-humble-desktop ros-dev-tools

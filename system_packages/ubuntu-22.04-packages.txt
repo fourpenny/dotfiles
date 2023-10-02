@@ -3,6 +3,7 @@ git
 wget
 neovim
 gcc
+curl
 
 # useful utilities
 ranger
@@ -14,8 +15,13 @@ kitty
 # RICE
 neofetch
 feh
-rofi
 
 # fun :)
 sl
 cowsay
+
+# cuda
+freeglut3-dev
+freeglut3
+libglu1-mesa-dev
+libglu1-mesa
