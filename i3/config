@@ -47,7 +47,7 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-#bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec dmenu_run -nb '#1e2030' -nf '#f4dbd6' -sb '#c6d0f5' -sf '#232634'
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -198,5 +198,3 @@ client.focused		#1E1E2E #F2CDCD #1E1E2E #B5E8E0		#1E1E2E
 client.focused_inactive	#988BA2	#302D41 #F5E0DC	#F5E0DC		#302D41
 
 
-#Replace dmenu with rofi
-bindsym $mod+d exec /home/christian/.config/rofi/bin/launcher_text -show run

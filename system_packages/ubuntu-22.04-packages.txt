@@ -25,3 +25,8 @@ freeglut3-dev
 freeglut3
 libglu1-mesa-dev
 libglu1-mesa
+
+# window manager
+i3-wm
+i3status
+suckless-tools

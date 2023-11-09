@@ -64,16 +64,6 @@ if [ "$operating_system" = "ubuntu-20.04" ] | [ "$operating_system" = "ubuntu-22
 	apt install -y $PACKAGES
 fi
 
-#############
-#  WM Setup #
-#############
-
-if [ "$window_manager" = "i3" ]; then
-	pushd window_manager/i3
-	./setup.bash
-	popd
-fi
-
 ###########
 #  Snaps  #
 ###########
